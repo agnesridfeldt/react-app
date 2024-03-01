@@ -16,13 +16,13 @@ function App() {
     <div>
       <Router>
         <Header />
-        {/*<Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/books" element={<Books />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/timeline" element={<Timeline />} />
-          <Route path="/interview" element={<Interview />} />
-        </Routes>*/}
+        <Routes>
+          <Route exact path="/index.html" element={<Home />} />
+          <Route exact path="/books.html" element={<Books />} />
+          <Route exact path="/about.html" element={<About />} />
+          <Route exact path="/timeline.html" element={<Timeline />} />
+          <Route exact path="/interview.html" element={<Interview />} />
+        </Routes>
         <Footer />
       </Router>
     </div>
