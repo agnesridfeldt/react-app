@@ -3,24 +3,19 @@ import React from "react";
 class NewsletterForm extends React.Component {
     constructor(props) {
         super(props);
-        // Initialisera namn och emial
         this.state = {
             name: '',
             email: ''
         };
     }
 
-    // Updatera tillstånd baserat på input
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
     }
 
-    // Hantera inskick
     handleSubmit = (event) => {
         event.preventDefault();
-        // Kalla på onSubmit-funktionen
         this.props.onSubmit(this.state);
-        // Återställ tillstånd för att rensa formuläret
         this.setState({ name: '', email: '' });
     }
 
@@ -61,7 +56,10 @@ class NewsletterForm extends React.Component {
 class Home extends React.Component {
     handleNewsletterSubmit = (formData) => {
         console.log('Form Data:', formData);
-        // API
+        const subject = encodeURIComponent("Newsletter Subscription");
+        const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nI would like to subscribe to the newsletter.`);
+        const mailtoLink = `mailto:?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
     };
 
     render() {
