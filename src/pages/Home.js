@@ -1,24 +1,27 @@
 import React from "react";
 
-// NewsletterForm component
 class NewsletterForm extends React.Component {
     constructor(props) {
         super(props);
+        // Initialisera namn och emial
         this.state = {
             name: '',
             email: ''
         };
     }
 
+    // Updatera tillstånd baserat på input
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
     }
 
+    // Hantera inskick
     handleSubmit = (event) => {
-        event.preventDefault(); // Prevent form from causing a page reload
-        // Call the onSubmit prop function, passing the state
+        event.preventDefault();
+        // Kalla på onSubmit-funktionen
         this.props.onSubmit(this.state);
-        this.setState({ name: '', email: '' }); // Reset form fields
+        // Återställ tillstånd för att rensa formuläret
+        this.setState({ name: '', email: '' });
     }
 
     render() {
@@ -55,11 +58,10 @@ class NewsletterForm extends React.Component {
     }
 }
 
-// Updated Home component
 class Home extends React.Component {
     handleNewsletterSubmit = (formData) => {
         console.log('Form Data:', formData);
-        // Here you could also call an API to submit the form data
+        // API
     };
 
     render() {
@@ -76,7 +78,6 @@ class Home extends React.Component {
                         <img src={require("../images/thg.jpeg")} alt="Logo. Suzanne Collins signature." className="logo"/>                    
                     </div>
                 </div>
-
                 <div className="form">
                     <NewsletterForm onSubmit={this.handleNewsletterSubmit} />
                 </div>
