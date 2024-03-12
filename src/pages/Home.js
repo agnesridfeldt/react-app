@@ -56,10 +56,13 @@ class NewsletterForm extends React.Component {
 class Home extends React.Component {
     handleNewsletterSubmit = (formData) => {
         console.log('Form Data:', formData);
+        
         const subject = encodeURIComponent("Newsletter Subscription");
         const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nI would like to subscribe to the newsletter.`);
         const mailtoLink = `mailto:?subject=${subject}&body=${body}`;
         window.location.href = mailtoLink;
+        
+        alert("Thank you for signing up for the newsletter!");
     };
 
     render() {

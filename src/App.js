@@ -5,6 +5,7 @@ import Books from "./pages/Books";
 import About from "./pages/About";
 import Timeline from "./pages/Timeline";
 import Interview from "./pages/Interview";
+import Extra from "./pages/Extra";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/about.html" element={<About />} />
           <Route exact path="/timeline.html" element={<Timeline />} />
           <Route exact path="/interview.html" element={<Interview />} />
+          <Route exact path="/extra.html" element={<Extra />} />
         </Routes>
         <Footer />
       </Router>
