@@ -32,11 +32,11 @@ class Header extends React.Component {
                 </div>
 
                 <nav className="menu">
-                    <NavLink to="/index.html" activeClassName="active">Home</NavLink>
-                    <NavLink to="/books.html">Books</NavLink>
-                    <NavLink to="/about.html">About</NavLink>
-                    <NavLink to="/timeline.html">Timeline</NavLink>
-                    <NavLink to="/interview.html">Interview</NavLink>
+                    <NavLink to="/" activeClassName="active">Home</NavLink>
+                    <NavLink to="/books">Books</NavLink>
+                    <NavLink to="/about">About</NavLink>
+                    <NavLink to="/timeline">Timeline</NavLink>
+                    <NavLink to="/interview">Interview</NavLink>
                 </nav>
 
                 <div id="hamburger-menu">
