@@ -15,6 +15,11 @@ import "./App.css";
 function App() {
   return (
     <div>
+      <style>
+        @import url('https://fonts.cdnfonts.com/css/amagro');
+        @import url('https://fonts.cdnfonts.com/css/proxima-nova-condensed');
+      </style>
+
       <Router>
         <Header />
         <Routes>
