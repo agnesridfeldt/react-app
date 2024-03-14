@@ -6,7 +6,7 @@ class NewsletterForm extends React.Component {
         this.state = {
             name: '',
             email: '',
-            submitted: false // Add this line
+            submitted: false
         };
     }
 
@@ -17,7 +17,7 @@ class NewsletterForm extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.onSubmit(this.state);
-        this.setState({ name: '', email: '', submitted: true }); // Update this line
+        this.setState({ name: '', email: '', submitted: true });
     }
 
     render() {
