@@ -24,7 +24,7 @@ class NewsletterForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <h2>Sign up for newsletters</h2>
-                {this.state.submitted && <p className="submitted">Thank you for signing up for the newsletter!</p>} {/* Add this line */}
+                {this.state.submitted && <p className="submitted">Thank you for signing up for the newsletter!</p>}
                 <div className="form-row">
                     <div className="form-group">
                         <input
