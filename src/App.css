@@ -921,3 +921,9 @@ td {
       color: black !important;
   }
 }
+
+.submitted {
+  color: #FFFDFA;
+  text-align: center;
+  padding-bottom: 15px;
+}

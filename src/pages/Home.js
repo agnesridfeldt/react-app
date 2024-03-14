@@ -5,7 +5,8 @@ class NewsletterForm extends React.Component {
         super(props);
         this.state = {
             name: '',
-            email: ''
+            email: '',
+            submitted: false // Add this line
         };
     }
 
@@ -16,13 +17,14 @@ class NewsletterForm extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.onSubmit(this.state);
-        this.setState({ name: '', email: '' });
+        this.setState({ name: '', email: '', submitted: true }); // Update this line
     }
 
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
                 <h2>Sign up for newsletters</h2>
+                {this.state.submitted && <p className="submitted">Thank you for signing up for the newsletter!</p>} {/* Add this line */}
                 <div className="form-row">
                     <div className="form-group">
                         <input
@@ -56,13 +58,11 @@ class NewsletterForm extends React.Component {
 class Home extends React.Component {
     handleNewsletterSubmit = (formData) => {
         console.log('Form Data:', formData);
-        
+
         const subject = encodeURIComponent("Newsletter Subscription");
         const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nI would like to subscribe to the newsletter.`);
         const mailtoLink = `mailto:?subject=${subject}&body=${body}`;
         window.location.href = mailtoLink;
-        
-        alert("Thank you for signing up for the newsletter!");
     };
 
     render() {
@@ -76,7 +76,7 @@ class Home extends React.Component {
                                 <cite>- Booklist, STARRED REVIEW</cite>
                             </p>
                         </blockquote>
-                        <img src={require("../images/thg.jpeg")} alt="Logo. Suzanne Collins signature." className="logo"/>                    
+                        <img src={require("../images/thg.jpeg")} alt="Logo. Suzanne Collins signature." className="logo" />
                     </div>
                 </div>
                 <div className="form">
